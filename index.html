@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,8 +6,8 @@
     <title>IP Checker</title>
 </head>
 <body>
-    <h1>IP CHECKER</h1>
-    <div id="info"></div>
+    <h1>IP Checker</h1>
+    <div id="info">Loading...</div>
 
     <script>
         async function getIPInfo() {
@@ -21,7 +20,7 @@
                 
                 
                 infoDiv.innerHTML = `
-		    <p><strong>IP:</strong> ${data.ip || 'Unknown'}</p>
+                    <p><strong>IP:</strong> ${data.ip || 'Unknown'}</p>
                     <p><strong>City:</strong> ${data.city || 'Unknown'}</p>
                     <p><strong>Region:</strong> ${data.region || 'Unknown'}</p>
                     <p><strong>Country:</strong> ${data.country_name || 'Unknown'} (${data.country || ''})</p>
@@ -42,3 +41,4 @@
     </script>
 </body>
 </html>
+

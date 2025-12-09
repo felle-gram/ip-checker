@@ -8,4 +8,4 @@ If you want to run this locally:
 1. Save the HTML file.
 2. Open it in your browser.
 
-**Live demo:** [username.github.io/ip-checker](https://felle-gram.github.io/ip-checker)
+**Live demo:** [felle-gram.github.io/ip-checker](https://felle-gram.github.io/ip-checker)

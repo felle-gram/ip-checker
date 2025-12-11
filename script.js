@@ -1,0 +1,27 @@
+async function getIPInfo() {
+  const statusDiv = document.getElementById("status");
+  const infoDiv = document.getElementById("info");
+
+  try {
+    const response = await fetch("https://ipapi.co/json/");
+    const data = await response.json();
+
+    infoDiv.innerHTML = `
+                    <p><strong>IP:</strong> ${data.ip || "Unknown"}</p>
+                    <p><strong>City:</strong> ${data.city || "Unknown"}</p>
+                    <p><strong>Region:</strong> ${data.region || "Unknown"}</p>
+                    <p><strong>Country:</strong> ${data.country_name || "Unknown"} (${data.country || ""})</p>
+                    <p><strong>Postal Code:</strong> ${data.postal || "Unknown"}</p>
+                    <p><strong>Timezone:</strong> ${data.timezone || "Unknown"}</p>
+                    <p><strong>ISP:</strong> ${data.org || "Unknown"}</p>
+                    <p><strong>ASN:</strong> ${data.asn || "Unknown"}</p>
+                    <p><strong>Coordinates:</strong> ${data.latitude}, ${data.longitude}</p>
+                    <button onclick="location.reload()">Refresh</button>
+                `;
+  } catch (error) {
+    statusDiv.textContent = "Error loading information";
+    infoDiv.innerHTML = `<p>Failed to fetch IP information: ${error.message}</p>`;
+  }
+}
+
+getIPInfo();
